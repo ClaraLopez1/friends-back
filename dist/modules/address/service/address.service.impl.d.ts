@@ -5,7 +5,7 @@ export declare class AddressServiceImpl implements AddressService {
     private readonly addressRepository;
     constructor(addressRepository: AddressRepository);
     getAddresses(): Promise<AddressDTO[]>;
-    createAddress(address: CreateAddressDTO): Promise<AddressDTO>;
+    createAddress(address: CreateAddressDTO, friendId: string): Promise<AddressDTO>;
     updateAddress(id: string, address: UpdateAddressDTO): Promise<AddressDTO>;
     deleteAddress(id: string): Promise<void>;
 }

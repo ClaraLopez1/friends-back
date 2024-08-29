@@ -9,8 +9,8 @@ class AddressServiceImpl {
     async getAddresses() {
         return this.addressRepository.getAll();
     }
-    async createAddress(address) {
-        return this.addressRepository.create(address);
+    async createAddress(address, friendId) {
+        return this.addressRepository.create(address, friendId);
     }
     async updateAddress(id, address) {
         return this.addressRepository.update(id, address);

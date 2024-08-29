@@ -4,7 +4,6 @@ export declare class CreateAddressDTO {
     state: string;
     country: string;
     zip: string;
-    friendId: string;
 }
 export declare class UpdateAddressDTO {
     street?: string;

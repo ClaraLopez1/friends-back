@@ -17,9 +17,10 @@ exports.addressRouter.get('/', async (req, res) => {
     const addresses = await service.getAddresses();
     return res.status(http_status_1.default.OK).json(addresses);
 });
-exports.addressRouter.post('/', (0, validation_1.BodyValidation)(dto_1.CreateAddressDTO), async (req, res) => {
+exports.addressRouter.post('/:friendId', (0, validation_1.BodyValidation)(dto_1.CreateAddressDTO), async (req, res) => {
     const data = req.body;
-    const address = await service.createAddress(data);
+    const { friendId } = req.params;
+    const address = await service.createAddress(data, friendId);
     return res.status(http_status_1.default.CREATED).json(address);
 });
 exports.addressRouter.delete('/:id', async (req, res) => {

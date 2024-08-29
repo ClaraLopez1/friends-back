@@ -17,7 +17,6 @@ class CreateAddressDTO {
     state;
     country;
     zip;
-    friendId;
 }
 __decorate([
     (0, class_validator_1.IsString)(),
@@ -44,11 +43,6 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateAddressDTO.prototype, "zip", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateAddressDTO.prototype, "friendId", void 0);
 exports.CreateAddressDTO = CreateAddressDTO;
 class UpdateAddressDTO {
     street;

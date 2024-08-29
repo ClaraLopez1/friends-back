@@ -27,6 +27,11 @@ class FriendsRepositoryImpl {
         return friends.map(friend => new dto_1.FriendDTO(friend));
     }
     async delete(id) {
+        await this.db.address.deleteMany({
+            where: {
+                friendId: id,
+            },
+        });
         await this.db.friend.delete({
             where: {
                 id

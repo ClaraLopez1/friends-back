@@ -7,9 +7,14 @@ class AddressRepositoryImpl {
     constructor(db) {
         this.db = db;
     }
-    async create(data) {
+    async create(data, friendId) {
         const address = await this.db.address.create({
-            data
+            data: {
+                ...data,
+                friend: {
+                    connect: { id: friendId },
+                },
+            },
         });
         return new dto_1.AddressDTO(address);
     }

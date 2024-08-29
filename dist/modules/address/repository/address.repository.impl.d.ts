@@ -4,7 +4,7 @@ import { CreateAddressDTO, AddressDTO, UpdateAddressDTO } from '../../../modules
 export declare class AddressRepositoryImpl implements AddressRepository {
     private readonly db;
     constructor(db: PrismaClient);
-    create(data: CreateAddressDTO): Promise<AddressDTO>;
+    create(data: CreateAddressDTO, friendId: string): Promise<AddressDTO>;
     getAll(): Promise<AddressDTO[]>;
     delete(id: string): Promise<void>;
     update(id: string, data: UpdateAddressDTO): Promise<AddressDTO>;
